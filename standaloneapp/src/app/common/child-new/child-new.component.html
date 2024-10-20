@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-header style="background-color: aqua;">
+        <ng-content select="h2.head"></ng-content>
+    </mat-card-header>
+    <mat-card-content style="background-color: blanchedalmond;">
+        <ng-content select=".content"></ng-content>
+    </mat-card-content>
+    <mat-card-footer style="background-color: aliceblue;">
+        <ng-content select=".foot">Default Content</ng-content>
+    </mat-card-footer>
+</mat-card>

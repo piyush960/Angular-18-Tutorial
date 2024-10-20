@@ -1,0 +1,70 @@
+<p>customer works!</p>
+
+<input type="text" #inputElement [(ngModel)]="textinput">
+
+<button mat-button routerLink="add">
+    Add
+</button>
+<button mat-button routerLink="edit">
+    Edit
+</button>
+<router-outlet/>
+<button mat-button routerLink="/learn">
+    RxJS Page
+</button>
+<button mat-button routerLink="/productnew">
+    NGRX Page
+</button>
+<button mat-button routerLink="/mask">
+    Mask Page
+</button>
+<button type="button" (click)="onClick()">Click Me</button>
+@defer () {
+    <div>
+        <h2>This is Deferrable View</h2>
+    </div>
+}@placeholder {
+    <h4>This is placeholder</h4>
+}
+
+@defer (on timer(5s); on interaction) {
+    <div>
+        <h2>This is Deferrable View</h2>
+    </div>
+}@placeholder{
+    <h4>This is placeholder</h4>
+}
+
+@defer (on interaction(inputElement)) {
+    <div>
+        <h2>This is Deferrable View</h2>
+    </div>
+}@placeholder{
+    <h4>This is placeholder</h4>
+}
+
+@defer (on hover) {
+    <div>
+        <h2>This is Deferrable View</h2>
+    </div>
+}@placeholder{
+    <h4>This is placeholder</h4>
+}
+
+@defer (when isLoading) {
+    <div>
+        <h2>This is Deferrable View</h2>
+    </div>
+}@placeholder{
+    <h4>This is placeholder</h4>
+}
+
+@defer () {
+    <div>
+        <h2>This is Deferrable View</h2>
+    </div>
+}@loading(after 200ms; minimum 1s) {
+    <h4>Loading...</h4>
+}@error {
+    <h4>Failed to load the component</h4>
+}

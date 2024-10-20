@@ -1,0 +1,10 @@
+.btn-container{
+    margin-top: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mdc-button{
+    margin: 2px;
+}

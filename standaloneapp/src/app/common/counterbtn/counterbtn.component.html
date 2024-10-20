@@ -1,0 +1,8 @@
+<div class="btn-container">
+    <button type="button" mat-raised-button color="accent" (click)="decrement()">-</button>
+    <button type="button" mat-raised-button color="primary" (click)="reset()">Reset</button>
+    <button type="button" mat-raised-button color="warn" (click)="increment()">+</button>
+    <br>
+    <input type="text" placeholder="enter player name" #player>
+    <button type="button" mat-raised-button color="primary" (click)="addPlayer(player.value)">Add Player</button>
+</div>

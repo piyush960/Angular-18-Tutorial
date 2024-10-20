@@ -1,0 +1,24 @@
+<div>
+    <p>
+        Counter Value is : {{displayValue}}
+    </p>
+    <ul>
+        @for (player of service.players(); track player.id) {
+            <li>{{player.name}}</li>
+        }
+    </ul>
+    <p>Total player(s) is/are : {{displayPlayersCount()}}</p>
+    <p>Total player(s) is/are : {{_displayPlayersCount$ | async}}</p>
+    <p>Total player(s) is/are : {{_displayPlayersCountSG()}}</p>
+    <div>
+        @if(displayPlayersCount() == 0){
+            <p>No Users</p>
+        }
+        @else if (displayPlayersCount() == 1) {
+            <p>Single User</p>
+        }
+        @else {
+            <p>More Users</p>
+        }
+    </div>
+</div>

@@ -1,0 +1,18 @@
+
+<app-child-new>
+    <h2 class="head">Header 1</h2>
+    <p class="content">Main Content 1</p>
+    <p class="foot">Footer</p>
+</app-child-new>
+
+<app-child-new>
+    <h2 class="head">Header 2</h2>
+    <p class="content">Main Content 2</p>
+</app-child-new>
+
+<ul>
+    <!-- async pipe subscribes and unsubscribe automatically -->
+    @for (item of _jsonList$ | async; track $index) {
+        <li>{{item.name}}</li>
+    }
+</ul>

@@ -1,0 +1,84 @@
+<!-- interpolation -->
+<h4>{{pagename}}</h4>
+<p>{{pagecontent}}</p>
+
+<mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>
+        {{title() | uppercase}}
+        <br>
+        {{text}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{subtitle | lowercase}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        
+      <!-- pipes -->
+      <p>{{datetoday | date:'dd MMM, yy'}}</p>
+      <p>{{salary | currency: 'JPY'}}</p>
+      <p>{{salary | percent}}</p>
+      <p>{{salary + 0.3247382 | number:'1.2-4'}}</p>
+      <p>{{salary | currency: 'JPY'}}</p>
+      <p>{{_obj | json}}</p>
+  
+      <p>{{title() | reverse}}</p>
+  
+  
+      <!-- property binding - here datatype is considered -->
+      <input type="checkbox" [checked] = "isDisabled"/>
+  
+      <!-- interpolation - datatype is always string -->
+      <input type="checkbox" checked = {{isDisabled}}/>
+      <br>
+      <!-- event binding -->
+      <input type="text" (keyup)="changeTitle($event)">
+      <br>
+      <!-- two way binding - event binding + property binding -->
+      <input type="text" [(ngModel)]="title">
+
+
+      <!-- Directives -->
+       <div [ngClass]="{'active': isDisabled, 'inactive': !isDisabled}">
+        <h2>This is Attribute directives</h2>
+       </div>
+
+       <div [ngStyle]="{'color': 'cyan', 'background-color': 'gray'}">
+        <h2>This is another attribute directive</h2>
+       </div>
+
+       <div *ngIf="isDisabled">
+        <h2>this is structural directive</h2>
+       </div>
+
+       <div *ngFor="let item of _jsonList" [ngStyle]="{'color': item.color}">
+        <h2>{{item.name}} - {{item.gender}}</h2>
+       </div>
+
+       <div [ngSwitch]="_view">
+        <span *ngSwitchCase="'home'">
+          this is home
+        </span>
+        <span *ngSwitchCase="'about'">
+          this is about
+        </span>
+        <span *ngSwitchDefault>
+          this is default
+        </span>
+       </div>
+
+       <!-- transferring data between components -->
+      <div>
+        <input type="text" placeholder="firstName" [(ngModel)]="inputFirstName">
+        <br>
+        <input type="text" placeholder="lastName" [(ngModel)]="inputLastName">
+        <br>
+        <input type="text" placeholder="Enter Fruit Name" #fruit>
+        <br>
+        <button type="button" (click)="addFruit(fruit.value)">Add Fruit</button>
+      </div>
+      <app-child [firstName]="inputFirstName" [lastName]="inputLastName" [nameObj]="_obj" (dataupdater)="updateTitle($event)"></app-child>
+  
+    </mat-card-content>
+  </mat-card>

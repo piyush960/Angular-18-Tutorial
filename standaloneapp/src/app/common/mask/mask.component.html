@@ -1,0 +1,39 @@
+<div>
+    <label for="">Number</label>
+    <input mask="0000-0000" [showMaskTyped]="true">
+</div>
+
+<div>
+    <label for="">Phone</label>
+    <input prefix="+91" mask="(000)-000-0000" [showMaskTyped]="true">
+</div>
+
+<div>
+    <label for="">Separator</label>
+    <input mask="separator" thousandSeparator="," [showMaskTyped]="true">
+</div>
+
+<div>
+    <label for="">Allow Negative</label>
+    <input mask="separator" [allowNegativeNumbers]="true" thousandSeparator="," [showMaskTyped]="true">
+</div>
+
+<div>
+    <label for="">String Data</label>
+    <input mask="S{3}" [showMaskTyped]="true">
+</div>
+
+<div>
+    <label for="">Date</label>
+    <input mask="d0/M0/0000" [showMaskTyped]="true">
+</div>
+
+<div>
+    <label for="">Time</label>
+    <input mask="Hh:m0:s0" [showMaskTyped]="true">
+</div>
+
+<div>
+    <label for="">Aadhaar No.</label>
+    <input mask="XXXX-XXXX-0000" [hiddenInput]="true" [showMaskTyped]="true">
+</div>

@@ -1,0 +1,12 @@
+<div>
+    <h4>{{firstName}} - {{lastName}}</h4>
+    <p>{{nameObj | json}}</p>
+
+    <input type="text" placeholder="Title" #title>
+    <button type="button" (click)="dataupdater.emit(title.value)">Transfer</button>
+    <ul>
+        @for (fruit of fruits; track $index;) {
+            <li>{{$index + 1}}.) {{fruit}}</li>
+        }
+    </ul>
+</div>

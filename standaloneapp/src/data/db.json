@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "admin"
+    },
+    {
+      "id": "katie",
+      "name": "katie Rogers",
+      "password": "katie",
+      "email": "katie@yahoo.com",
+      "role": "manager",
+      "gender": "f"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "camera",
+      "description": "new camera 80MP",
+      "price": 46325,
+      "status": true
+    },
+    {
+      "id": "3",
+      "name": "Tennis Ball",
+      "description": "high bouncing ball\n\n\n",
+      "price": 120,
+      "status": true
+    }
+  ]
+}

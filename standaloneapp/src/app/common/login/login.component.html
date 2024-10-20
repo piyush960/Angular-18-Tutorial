@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header>
+        Login
+    </mat-card-header>
+    <mat-card-content>
+        <form class="example-form" #loginForm="ngForm" (ngSubmit)="proceedLogin(loginForm)">
+            <mat-form-field class="example-full-width">
+              <mat-label>username</mat-label>
+              <input required matInput placeholder="Enter username" [(ngModel)]="_logindata.username" #username="ngModel" name="username">
+              <div *ngIf="username.invalid && username.touched">this field is required</div>
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width">
+              <mat-label>password</mat-label>
+              <input required matInput type="password" [(ngModel)]="_logindata.password" #password="ngModel" name="password">
+            </mat-form-field>
+          
+            <mat-card-actions>
+                <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+                <a mat-raised-button color="accent" routerLink="/register">Register</a>
+            </mat-card-actions>
+        </form>
+    </mat-card-content>
+</mat-card>
